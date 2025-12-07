@@ -7,7 +7,13 @@ class InputModel(BaseModel):
     input_path: str = Field(
         title="Path to input data files",
         default='/home/shared_storage/input_data/InputSolargisFile.docx',
-        description="The path to input meteo data files"
+        description="The path to input meteo data files (supports wildcards: *.docx, *.csv, or directory paths)"
+    )
+
+    input_filetype: str = Field(
+        title="Input file type",
+        default='docx',
+        description="The type of input file: 'docx' for Word documents or 'csv' for CSV files"
     )    
 
     output_path: str = Field(
